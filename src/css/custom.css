@@ -1,0 +1,296 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* Windows 7风格的蓝色渐变配色方案 */
+:root {
+  /* 主色调 - Windows 7蓝色 */
+  --ifm-color-primary: #0078d4;
+  --ifm-color-primary-dark: #106ebe;
+  --ifm-color-primary-darker: #005a9e;
+  --ifm-color-primary-darkest: #004578;
+  --ifm-color-primary-light: #40e0d0;
+  --ifm-color-primary-lighter: #64b5f6;
+  --ifm-color-primary-lightest: #bbdefb;
+
+  /* Windows 7风格的辅助色 */
+  --ifm-color-secondary: #f5f7fa;
+  --ifm-color-secondary-dark: #e3e8ed;
+  --ifm-color-secondary-darker: #d6dde4;
+  --ifm-color-secondary-darkest: #b8c5d1;
+  --ifm-color-secondary-light: #f8f9fb;
+  --ifm-color-secondary-lighter: #fbfcfd;
+  --ifm-color-secondary-lightest: #ffffff;
+
+  /* 背景和文字 */
+  --ifm-background-color: #ffffff;
+  --ifm-color-content: #1f2937;
+  --ifm-color-content-secondary: #6b7280;
+  
+  /* 代码样式 */
+  --ifm-code-font-size: 95%;
+  --ifm-code-background: #f1f5f9;
+  --ifm-code-color: #1e40af;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 120, 212, 0.1);
+
+  /* 导航栏 - Windows 7风格 */
+  --ifm-navbar-background-color: linear-gradient(to bottom, #ffffff 0%, #e6f3ff 100%);
+  --ifm-navbar-shadow: 0 2px 4px rgba(0, 120, 212, 0.1);
+  
+  /* 字体 */
+  --ifm-font-family-base: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --ifm-heading-font-family: var(--ifm-font-family-base);
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.6;
+
+  /* 圆角 - Windows 7风格较小的圆角 */
+  --ifm-global-radius: 4px;
+  --ifm-button-border-radius: 3px;
+  --ifm-card-border-radius: 6px;
+
+  /* 间距 */
+  --ifm-spacing-horizontal: 1rem;
+  --ifm-spacing-vertical: 1rem;
+
+  /* Windows 7风格的边框 */
+  --ifm-border-color: #d1d9e0;
+}
+
+/* 深色模式 - 保持Windows风格 */
+[data-theme='dark'] {
+  /* 深色模式下的蓝色调整 */
+  --ifm-color-primary: #4fc3f7;
+  --ifm-color-primary-dark: #29b6f6;
+  --ifm-color-primary-darker: #03a9f4;
+  --ifm-color-primary-darkest: #0288d1;
+  --ifm-color-primary-light: #81d4fa;
+  --ifm-color-primary-lighter: #b3e5fc;
+  --ifm-color-primary-lightest: #e1f5fe;
+
+  /* 深色背景 */
+  --ifm-background-color: #1e293b;
+  --ifm-background-surface-color: #334155;
+  --ifm-color-content: #f1f5f9;
+  --ifm-color-content-secondary: #cbd5e1;
+
+  /* 代码样式 */
+  --ifm-code-background: #475569;
+  --ifm-code-color: #93c5fd;
+  --docusaurus-highlighted-code-line-bg: rgba(79, 195, 247, 0.15);
+
+  /* 导航栏深色模式 */
+  --ifm-navbar-background-color: #334155;
+  --ifm-navbar-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* 深色模式边框 */
+  --ifm-border-color: #475569;
+}
+
+/* 全局样式优化 */
+.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary-dark);
+}
+
+[data-theme='dark'] .markdown h1, 
+[data-theme='dark'] .markdown h2, 
+[data-theme='dark'] .markdown h3, 
+[data-theme='dark'] .markdown h4, 
+[data-theme='dark'] .markdown h5, 
+[data-theme='dark'] .markdown h6 {
+  color: var(--ifm-color-primary-light);
+}
+
+.markdown p {
+  margin-bottom: 1.2rem;
+}
+
+/* 首页hero样式 - Windows 7风格渐变 */
+.hero {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--ifm-border-color);
+}
+
+[data-theme='dark'] .hero {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+}
+
+.hero__title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, var(--ifm-color-primary-dark), var(--ifm-color-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme='dark'] .hero__title {
+  background: linear-gradient(45deg, var(--ifm-color-primary-light), var(--ifm-color-primary-lightest));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero__subtitle {
+  font-size: 1.25rem;
+  color: var(--ifm-color-content-secondary);
+  margin-bottom: 2rem;
+}
+
+/* Windows 7风格的卡片 */
+.card {
+  border: 1px solid var(--ifm-border-color);
+  box-shadow: 0 1px 3px rgba(0, 120, 212, 0.1);
+  transition: all 0.3s ease;
+  background: var(--ifm-background-color);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 120, 212, 0.15);
+  border-color: var(--ifm-color-primary-light);
+}
+
+[data-theme='dark'] .card {
+  background-color: var(--ifm-background-surface-color);
+  border-color: var(--ifm-border-color);
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='dark'] .card:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  border-color: var(--ifm-color-primary-light);
+}
+
+/* Windows 7风格的按钮 */
+.button {
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.button--primary {
+  background: linear-gradient(to bottom, #4fc3f7 0%, #0078d4 100%);
+  border: 1px solid #0066cc;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.button--primary:hover {
+  background: linear-gradient(to bottom, #29b6f6 0%, #005a9e 100%);
+  border-color: #004578;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 120, 212, 0.2);
+}
+
+.button--secondary {
+  background: linear-gradient(to bottom, #ffffff 0%, #f5f7fa 100%);
+  border: 1px solid var(--ifm-border-color);
+  color: var(--ifm-color-primary-dark);
+}
+
+.button--secondary:hover {
+  background: linear-gradient(to bottom, #f5f7fa 0%, #e3e8ed 100%);
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary-dark);
+}
+
+/* 博客标题样式 */
+.blog-wrapper h1, .blog-wrapper h2 {
+  color: var(--ifm-color-primary-dark);
+}
+
+[data-theme='dark'] .blog-wrapper h1, 
+[data-theme='dark'] .blog-wrapper h2 {
+  color: var(--ifm-color-primary-light);
+}
+
+/* 导航栏优化 - Windows 7风格 */
+.navbar {
+  background: linear-gradient(to bottom, #ffffff 0%, #f0f8ff 100%);
+  border-bottom: 1px solid #d1d9e0;
+  backdrop-filter: blur(8px);
+}
+
+[data-theme='dark'] .navbar {
+  background: linear-gradient(to bottom, #334155 0%, #1e293b 100%);
+  border-bottom: 1px solid #475569;
+}
+
+.navbar__title {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--ifm-color-primary-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-theme='dark'] .navbar__title {
+  color: var(--ifm-color-primary-light);
+}
+
+.navbar__toggle {
+  display: none !important;
+}
+
+.navbar-sidebar__title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navbar__item {
+  font-weight: 500;
+}
+
+.navbar__link:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* Windows 7风格的阴影和边框 */
+.dropdown {
+  border: 1px solid var(--ifm-border-color);
+  box-shadow: 0 2px 8px rgba(0, 120, 212, 0.1);
+}
+
+/* 页脚样式 */
+.footer {
+  background: linear-gradient(to bottom, #2c3e50 0%, #1a252f 100%);
+  border-top: 1px solid var(--ifm-border-color);
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 996px) {
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+}
+
+.footer--dark {
+  --ifm-footer-background-color: var(--ifm-background-surface-color);
+  --ifm-footer-title-color: var(--ifm-color-primary-light);
+  --ifm-footer-link-color: var(--ifm-color-content-secondary);
+}

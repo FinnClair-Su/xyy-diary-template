@@ -1,0 +1,397 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+/* 主容器 */
+.mainContainer {
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 中央内容区域 */
+.centerContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 头像区域 */
+.avatarSection {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.avatarBorder {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  border: 2px dashed #007bff;
+  animation: spin 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ASCII演示区域 */
+.signatureSection {
+  margin-bottom: 60px;
+}
+
+.asciiDemo {
+  text-align: center;
+  padding: 40px;
+  background: rgba(248, 250, 252, 0.8);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  max-width: 500px;
+}
+
+.asciiText {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  font-family: 'Georgia', serif;
+  line-height: 1.4;
+}
+
+.currentCharInfo {
+  font-size: 16px;
+  color: #059669;
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-family: 'Courier New', monospace;
+  background: rgba(5, 150, 105, 0.1);
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.quote {
+  color: #94a3b8;
+  font-size: 32px;
+}
+
+.asciiChar {
+  opacity: 0.3;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.asciiChar.revealed {
+  opacity: 1;
+  color: #1e293b;
+}
+
+.asciiChar.current {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulse 0.6s ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.asciiComplete {
+  margin-top: 24px;
+  text-align: center;
+  min-height: 40px;
+}
+
+.interimMessage,
+.completeMessage {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.interimMessage {
+  color: #64748b;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.completeMessage {
+  color: #16a34a;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  opacity: 0;
+  animation: fadeIn 0.5s 0.2s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 模块介绍砖块区域 */
+.modulesSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 80px 0 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.moduleBlock {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.moduleBlock:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.moduleContent {
+  padding: 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  }
+
+.moduleTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  color: #1e293b;
+}
+
+.moduleText {
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 15px;
+  flex: 1;
+}
+
+.moduleText p {
+  margin: 0 0 16px 0;
+}
+
+.moduleText p:last-child {
+  margin-bottom: 0;
+}
+
+/* 七段数码管样式 */
+.digitalContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.digitalDisplay {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.digitalDigit {
+  position: relative;
+  width: 40px;
+  height: 60px;
+}
+
+.segment {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.segmentOn {
+  background: #000000 !important;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 水平段 */
+.segmentA, .segmentD, .segmentG {
+  width: 24px;
+  height: 4px;
+  left: 8px;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+}
+
+.segmentA { top: 2px; }
+.segmentG { top: 28px; }
+.segmentD { top: 54px; }
+
+/* 垂直段 */
+.segmentB, .segmentC, .segmentE, .segmentF {
+  width: 4px;
+  height: 24px;
+  clip-path: polygon(0% 10%, 50% 0%, 100% 10%, 100% 90%, 50% 100%, 0% 90%);
+}
+
+.segmentB { top: 4px; right: 4px; }
+.segmentC { top: 32px; right: 4px; }
+.segmentE { top: 32px; left: 4px; }
+.segmentF { top: 4px; left: 4px; }
+
+/* 底部信息 */
+.homeFooter {
+  margin-top: auto;
+  padding: 40px;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(248, 250, 252, 0.5);
+}
+
+.footerContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footerText {
+  color: #64748b;
+  font-size: 16px;
+  margin: 0 0 16px 0;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.socialLinks a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.socialLinks a:hover {
+  color: #1e40af;
+}
+
+.separator {
+  color: #cbd5e1;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .centerContent {
+    padding: 100px 20px 20px;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .asciiDemo {
+    padding: 24px;
+    margin: 0 auto;
+  }
+  
+  .asciiText {
+    font-size: 20px;
+  }
+  
+  /* 模块砖块响应式调整 */
+  .modulesSection {
+    margin: 60px 0 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .moduleBlock:hover {
+    transform: translateY(-4px);
+  }
+  
+  .moduleContent {
+    padding: 24px;
+  }
+  
+  .moduleTitle {
+    font-size: 18px;
+  }
+  
+  .moduleText {
+    font-size: 14px;
+  }
+  
+  .asciiText {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .asciiText {
+    font-size: 18px;
+  }
+  
+  .quote {
+    font-size: 24px;
+  }
+}
+
+.tagline {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #555;
+  letter-spacing: 0.05em;
+}
